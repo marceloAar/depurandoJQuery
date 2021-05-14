@@ -1,35 +1,43 @@
+<!--Depurando jQuery
+	Marcelo Aceituno R
+	Full Stack JAVA 0034-->
 <html>
 <head>
-	<title>jQuery</title>
+	<title>Depurando jQuery</title>
 	<link rel="stylesheet" type="text/css" href="debugging_jquery.css">
 	<script type="text/javascript" src='http://code.jquery.com/jquery-1.10.2.min.js'></script>
-	<script type="text/javascript">
 	
-			$('p, h3, li').hoverfunction(){
-				$(this).css('color', 'white');
+	<script type="text/javascript">
+		$(document).ready(function(){
+	
+			$('p, h3, li').hover(function(){
+				$(this).css('color', 'blue');
 			}, function(){
 				$(this).css('color', 'black');
 			});
 
 			$('a').click(function(){
-				alert("we don't actually serve pizza...");
+				alert("!! Nosotros en realidad no servimos pizza ... !!");
 			});
 
 			$('img').click(function(){
 				$(this).slideUp();
-			);
+			});
 
 			$('h5').click(function(){
-				$('img').slide Down();
+				$('img').slideDown();
 			});
 
 			$('button').click(function(){
-				var result = $('input:checked').value()  
-				alert("Thank you for your input, we like " + result + " too!");
-			});	
+				var result = $('input:checked').val();  
+				alert("Gracias por tu aporte, ¡a nosotros nos gusta el " + result + " tambien!");
+			});
+		});
 
 	</script>
+
 </head>
+
 <body>
 	<div id='wrapper'>
 		<div id='top_headers'> 
@@ -38,9 +46,9 @@
 		</div> <!--end of top headers -->
 		<div id='survey'>
 			Question of the month:  What is your favorite pizza topping?
-			<input type='radio' name='topping' value='pepperoni'>Pepperoni
-			<input type='radio' name='topping' value='bacon'>Bacon
-			<input type='radio' name='topping' value='pineapple'>Pineapple
+			<input type='radio' name='topping' value='PEPPERONI'>Pepperoni
+			<input type='radio' name='topping' value='TOCINO'>Bacon
+			<input type='radio' name='topping' value='PIÑA'>Pineapple
 			<button>Tell us!</button>
 		</div>
 		<div id='left_content'>
